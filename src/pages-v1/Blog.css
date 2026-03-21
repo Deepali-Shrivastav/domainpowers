@@ -1,0 +1,228 @@
+.blog-listing {
+  background: white;
+}
+
+.blog-hero {
+  background: var(--primary-black) !important;
+  padding: 140px 0 80px !important;
+}
+
+.blog-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.blog-hero p {
+  color: #888;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.blog-grid-section {
+  padding: 100px 0;
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.blog-card {
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.blog-img-box {
+  position: relative;
+  display: block;
+  height: 250px;
+  overflow: hidden;
+}
+
+.blog-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-img-box img {
+  transform: scale(1.1);
+}
+
+.blog-date {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--primary-red);
+  color: white;
+  padding: 8px 15px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.blog-info {
+  padding: 30px;
+}
+
+.blog-author {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-red);
+  margin-bottom: 12px;
+}
+
+.blog-info h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-black);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.blog-info p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.read-more-link {
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--primary-black);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s ease;
+}
+
+.read-more-link span {
+  color: var(--primary-red);
+  font-size: 1.2rem;
+}
+
+.read-more-link:hover {
+  gap: 15px;
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eee;
+  border-top-color: var(--primary-red);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Single Post styling */
+.post-page {
+  padding-top: 80px;
+}
+
+.post-header {
+  padding: 100px 0 60px;
+  background: white;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.post-meta {
+  margin-bottom: 20px;
+}
+
+.post-title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary-black);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.post-body-container {
+  padding: 80px 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.post-content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.post-content p {
+  margin-bottom: 30px;
+}
+
+.post-content h2, .post-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin: 50px 0 25px;
+  color: var(--primary-black);
+}
+
+.post-content blockquote {
+  border-left: 5px solid var(--primary-red);
+  padding: 30px 40px;
+  background: var(--off-white);
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  .blog-posts-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .post-title h1 { font-size: 2.5rem; }
+  .blog-hero h1 { font-size: 2.5rem; }
+  .blog-hero { padding: 100px 0 60px !important; }
+}
+
+@media (max-width: 768px) {
+  .blog-posts-grid { grid-template-columns: 1fr; }
+  .blog-hero h1 { font-size: 2.2rem; }
+  .post-title h1 { font-size: 2rem; }
+  .post-header { padding: 80px 0 40px; }
+  .post-body-container { padding: 40px 0; }
+  .post-content { font-size: 1.05rem; }
+  .post-content blockquote { padding: 20px 25px; font-size: 1.15rem; }
+}
+
+@media (max-width: 480px) {
+  .blog-hero h1 { font-size: 1.8rem; }
+  .post-title h1 { font-size: 1.6rem; }
+  .blog-info { padding: 20px; }
+  .blog-info h3 { font-size: 1.3rem; }
+}

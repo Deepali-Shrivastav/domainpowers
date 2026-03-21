@@ -1,0 +1,136 @@
+.our-products {
+  background: white;
+  padding: 140px 0;
+}
+
+.our-products .grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
+}
+
+@media (max-width: 1200px) {
+  .our-products .grid-3 {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .our-products { padding: 80px 0; }
+  .our-products .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-products .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-content { padding: 25px; }
+  .product-content h3 { font-size: 1.2rem; }
+  .product-img-wrapper { height: 200px; }
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.product-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-12px);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12);
+}
+
+.product-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-bottom: 3px solid var(--primary-red);
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+  transition: all 0.4s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.product-category-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary-red);
+  color: white;
+  padding: 5px 12px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  z-index: 5;
+}
+
+.product-content {
+  padding: 35px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-black);
+  margin-bottom: 20px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.product-content p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+  color: var(--secondary-red);
+  gap: 15px;
+}
+
+.learn-more:hover {
+  gap: 10px;
+}

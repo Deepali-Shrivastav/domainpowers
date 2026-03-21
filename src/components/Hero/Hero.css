@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.slide-item {
+  position: relative;
+  height: 100vh;
+  display: flex !important;
+  align-items: center;
+}
+
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f0f0f; /* Dark industrial fallback */
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: -1;
+}
+
+.slide-content {
+  padding-top: 100px;
+}
+
+.text-content {
+  max-width: 800px;
+}
+
+.text-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 25px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+.text-content p {
+  font-size: 1.25rem;
+  color: #cccccc;
+  margin-bottom: 45px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+}
+
+/* Floating Experience Badge from PDF */
+.experience-badge-floating {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  background: var(--primary-red);
+  color: white;
+  padding: 30px;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(227, 30, 36, 0.4);
+  z-index: 10;
+  border: 8px solid rgba(255, 255, 255, 0.1);
+}
+
+.badge-content .number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.badge-text p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Slick adjustments */
+.slick-dots {
+  bottom: 40px;
+  width: auto;
+  left: 100px;
+  text-align: left;
+}
+
+.slick-dots li button:before {
+  color: white;
+  opacity: 0.3;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--primary-red);
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .text-content { text-align: center; margin: 0 auto; }
+  .text-content h1 { font-size: 3rem; }
+  .hero-btns { justify-content: center; }
+  .experience-badge-floating {
+    bottom: 30px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+  }
+  .badge-content .number { font-size: 2.22rem; }
+  .slick-dots { left: 50% !important; transform: translateX(-50%); text-align: center; }
+}
+
+@media (max-width: 768px) {
+  .hero-btns { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+  .text-content h1 { font-size: 2.2rem; }
+  .text-content p { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .experience-badge-floating { display: none; }
+  .text-content h1 { font-size: 1.8rem; }
+  .hero { height: auto; min-height: 500px; }
+  .slide-item { height: auto; padding: 120px 0 80px; }
+}

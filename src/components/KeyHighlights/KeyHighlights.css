@@ -1,0 +1,101 @@
+.key-highlights {
+  background: var(--off-white);
+  padding: 120px 0;
+}
+
+.highlight-card {
+  padding: 60px 40px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.highlight-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary-red);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  transform-origin: left;
+}
+
+.highlight-card:hover::before {
+  transform: scaleX(1);
+}
+
+.highlight-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(227, 30, 36, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  transition: all 0.5s ease;
+}
+
+.highlight-card:hover .highlight-icon-wrapper {
+  background: var(--primary-red);
+  transform: rotateY(180deg);
+}
+
+.highlight-icon {
+  color: var(--primary-red);
+  font-size: 2.2rem;
+  transition: all 0.5s ease;
+}
+
+.highlight-card:hover .highlight-icon {
+  color: white;
+}
+
+.highlight-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--primary-black);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.highlight-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+  .key-highlights { padding: 80px 0; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .highlight-card { padding: 40px 30px; }
+  .highlight-icon-wrapper { width: 60px; height: 60px; margin-bottom: 25px; }
+  .highlight-icon { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .highlight-card h3 { font-size: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .key-highlights { padding: 60px 0; }
+  .highlight-card { padding: 30px 20px; }
+}
