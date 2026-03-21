@@ -19,7 +19,7 @@ const BlogListing = () => {
       mainImage,
       publishedAt,
       author->{name},
-      "excerpt": array::join(string::split(pt::text(body), "")[0..180], "") + "..."
+      "excerpt": pt::text(body)
     }`;
 
     // Note: Mock posts would need to be moved to a shared data file or handled here
@@ -84,7 +84,7 @@ const BlogListing = () => {
                   <div className="blog-info">
                     <span className="blog-author">By {post.author?.name || 'Technical Team'}</span>
                     <h3>{post.title}</h3>
-                    <p>{post.excerpt}</p>
+                    <p>{post.excerpt ? post.excerpt.substring(0, 180) + '...' : 'No excerpt available.'}</p>
                     <Link href={`/blog/${post.slug.current}`} className="read-more-link">
                       View Full Case Study <span>→</span>
                     </Link>
